@@ -7,25 +7,27 @@
 我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？
 """
 
-# 递归虽然简单，但效率低
-def climbStairs1(n):
-    if n == 1:
-        return 1
-    elif n == 2:
-        return 2
-    else:
-        return climbStairs1(n-1)+climbStairs1(n-2)
+
+class Solution:
+    # 递归虽然简单，但效率低
+    def climbStairs1(self, n:int):
+        if n == 1:
+            return 1
+        elif n == 2:
+            return 2
+        else:
+            return self.climbStairs1(n-1) + self.climbStairs1(n-2)
+
+    def climbStairs2(self, n:int):
+        if n == 1 or n == 2:
+            return n
+        a, b = 1, 2
+        for i in range(3, n+1):
+            a, b = b, a+b
+        return b
 
 
-def climbStairs2(n):
-    if n == 1 or n == 2:
-        return n
-    a, b = 1, 2
-    for i in range(3, n+1):
-        a, b = b, a+b
-    return b
-
+s = Solution()
 n = 15
-print(climbStairs1(n))
-print(climbStairs2(n))
-
+print(s.climbStairs1(n))
+print(s.climbStairs2(n))
