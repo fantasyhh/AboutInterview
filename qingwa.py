@@ -29,5 +29,5 @@ class Solution:
 
 s = Solution()
 n = 15
-print(s.climbStairs1(n))
-print(s.climbStairs2(n))
+assert(s.climbStairs1(n)) == 987
+assert(s.climbStairs2(n)) == 987

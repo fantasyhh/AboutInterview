@@ -16,5 +16,5 @@ class Solution:
 s = Solution()
 s1 = "A man, a plan, a canal: Panama"
 s2 = "race a car"
-print(s.isPalindrome(s1))
-print(s.isPalindrome(s2))
+assert(s.isPalindrome(s1)) == True
+assert(s.isPalindrome(s2)) == False

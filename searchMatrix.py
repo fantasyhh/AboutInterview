@@ -26,5 +26,5 @@ m = [
 ]
 
 s = Solution()
-print(s.searchMatrix(m, 20))
-print(s.searchMatrix(m, 13))
+assert(s.searchMatrix(m, 20)) == False
+assert(s.searchMatrix(m, 13)) == True
